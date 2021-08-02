@@ -1,0 +1,118 @@
+@import "g-style";
+@import "icons";
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.slider {
+  position: relative;
+  width: 800px;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 15px;
+  ul {
+    li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip-path: circle(0 at 50% 50%);
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .movie-info {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.651);
+        color: #000;
+        width: 75%;
+        margin-top: 50px;
+        margin-left: 50px;
+        padding: 20px;
+        border-radius: 5px;
+        h3 {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: 400;
+        }
+      }
+      &.active {
+        clip-path: circle(150% at 50% 50%);
+        transition: 1s;
+      }
+    }
+  }
+  .arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    span {
+      font-size: 2rem;
+      background-color: #fffffc;
+      color: #000;
+      width: 35px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .left-arrow {
+      border-radius: 0 4px 4px 0;
+    }
+    .right-arrow {
+      border-radius: 4px 0 0 4px;
+    }
+  }
+  &:hover .arrows {
+    opacity: 1;
+  }
+  .pointer-dots {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    span {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 20px;
+      background-color: #fffffc;
+      margin: 5px;
+      cursor: pointer;
+      transition: width 0.3s ease-in-out;
+      &:hover {
+        width: 20px;
+      }
+      &.active {
+        width: 20px;
+        background-color: #d00000;
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .arrows {
+      opacity: 1;
+    }
+  }
+}

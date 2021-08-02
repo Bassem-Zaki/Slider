@@ -1,0 +1,242 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.g-container {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+@media (min-width: 576px) {
+  .g-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .g-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .g-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .g-container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .g-container {
+    max-width: 1320px;
+  }
+}
+
+.g-upper {
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?1nhj16");
+  src: url("../fonts/icomoon.eot?1nhj16#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?1nhj16") format("truetype"), url("../fonts/icomoon.woff?1nhj16") format("woff"), url("../fonts/icomoon.svg?1nhj16#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-keyboard_arrow_right:before {
+  content: "\e901";
+}
+
+.icon-keyboard_arrow_left:before {
+  content: "\e902";
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.slider {
+  position: relative;
+  width: 800px;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.slider ul li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: circle(0 at 50% 50%);
+          clip-path: circle(0 at 50% 50%);
+}
+
+.slider ul li img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider ul li .movie-info {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.651);
+  color: #000;
+  width: 75%;
+  margin-top: 50px;
+  margin-left: 50px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.slider ul li .movie-info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.slider ul li .movie-info p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.slider ul li.active {
+  -webkit-clip-path: circle(150% at 50% 50%);
+          clip-path: circle(150% at 50% 50%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.slider .arrows {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slider .arrows span {
+  font-size: 2rem;
+  background-color: #fffffc;
+  color: #000;
+  width: 35px;
+  height: 40px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider .arrows .left-arrow {
+  border-radius: 0 4px 4px 0;
+}
+
+.slider .arrows .right-arrow {
+  border-radius: 4px 0 0 4px;
+}
+
+.slider:hover .arrows {
+  opacity: 1;
+}
+
+.slider .pointer-dots {
+  position: absolute;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 50%;
+  bottom: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.slider .pointer-dots span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 20px;
+  background-color: #fffffc;
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.slider .pointer-dots span:hover {
+  width: 20px;
+}
+
+.slider .pointer-dots span.active {
+  width: 20px;
+  background-color: #d00000;
+}
+
+@media (max-width: 992px) {
+  .slider .arrows {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
